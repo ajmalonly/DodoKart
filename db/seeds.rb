@@ -5,7 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Station.create(name:"Port Louis Victoria Central", latitude: -20.1624375, longitude: 57.4984168 )
+puts "Cleaning Database"
+Ticket.destroy_all
+Station.destroy_all
+User.destroy_all
+puts "Database Clean"
+
+puts "Creating seeds"
+user_one = User.create(email: "test1@gmail.com", password: "1234567")
+user_two = User.create(email: "test2@gmail.com", password: "1234567")
+user_three = User.create(email: "test3@gmail.com", password: "1234567")
+
+Station.create(name:"Port Louis Victoria Central", latitude: -20.1624375, longitude: 57.4984168)
 Station.create(name:"St Louis Station", latitude: -20.1809224, longitude: 57.476807)
 Station.create(name:"Barkly Station", latitude: -20.2208957, longitude: 57.4584738)
 Station.create(name:"Beau Bassin Station", latitude: -20.2267401, longitude: 57.4674423)
