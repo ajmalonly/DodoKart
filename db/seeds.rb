@@ -32,3 +32,5 @@ Station.create(name:"Palmerston Station", latitude: -20.2850436, longitude: 57.4
 Station.create(name:"Vacoas Central", latitude: -20.2950453, longitude: 57.4933938)
 Station.create(name:"Sadally Station", latitude: -20.3018021, longitude: 57.4958665)
 Station.create(name:"Floreal Station", latitude: -20.3073556, longitude: 57.5072335)
+Station.create(name:"Coromandel Station", latitude: -20.1836331, longitude: 57.4696472)
+Station.create(name:"Curepipe Central", latitude: -20.3163468, longitude:57.5254854)
