@@ -1,9 +1,4 @@
-<div class="center">
-<h2>Welcome on</h2>
-<br>
-<h2><strong>DodoKart !</strong></h2>
-<br>
-<div class="avatar">  <%= image_tag asset_path('The_Dodo_Logo.jpg')%> </div>
-<br>
-<p>Start your connected journey here !</p>
-</div>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
