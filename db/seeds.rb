@@ -34,3 +34,16 @@ Station.create(name:"Sadally Station", latitude: -20.3018021, longitude: 57.4958
 Station.create(name:"Floreal Station", latitude: -20.3073556, longitude: 57.5072335)
 Station.create(name:"Coromandel Station", latitude: -20.1836331, longitude: 57.4696472)
 Station.create(name:"Curepipe Central", latitude: -20.3163468, longitude:57.5254854)
+
+puts "Cleaning Database"
+Itinerary.destroy_all
+puts "Database Clean"
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "St Louis Station", price: 32, duration: 3)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Coromandel Station", price: 32, duration: 5)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Barkly Station", price: 38, duration: 10)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Beau Bassin Station", price: 38, duration: 15)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Vandermeersch Station", price: 38, duration: 21)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Rose-Hill Central", price: 38, duration: 24)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Belle Rose Station", price: 43, duration: 34)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "Quatre Bornes Central", price: 43, duration: 36)
+Itinerary.create(origin: "Port Louis Victoria Central", destination: "St Jean Station", price: 47, duration: 36)
