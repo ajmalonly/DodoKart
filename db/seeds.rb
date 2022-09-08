@@ -10,12 +10,10 @@ Ticket.destroy_all
 Station.destroy_all
 User.destroy_all
 puts "Database Clean"
-
 puts "Creating seeds"
 user_one = User.create(email: "test1@gmail.com", password: "1234567")
 user_two = User.create(email: "test2@gmail.com", password: "1234567")
 user_three = User.create(email: "test3@gmail.com", password: "1234567")
-
 Station.create(name: "Port Louis Victoria Central", latitude: -20.1624375, longitude: 57.4984168)
 Station.create(name: "St Louis Station", latitude: -20.1809224, longitude: 57.476807)
 Station.create(name: "Coromandel Station", latitude: -20.1836331, longitude: 57.4696472)
@@ -27,7 +25,6 @@ Station.create(name: "Belle Rose Station", latitude: -20.2535275, longitude: 57.
 Station.create(name: "Quatre Bornes Central", latitude: -20.2653165, longitude: 57.4784026)
 Station.create(name: "St Jean Station", latitude: -20.2617493, longitude: 57.4824836)
 Station.create(name: "Trianon Station", latitude: -20.2610855, longitude: 57.489833)
-
 Station.create(name: "Phoenix Station", latitude: -20.275049, longitude: 57.4965487)
 Station.create(name: "Phoenix Mall Station", latitude: -20.2797464, longitude: 57.4971339)
 Station.create(name: "Palmerston Station", latitude: -20.2850436, longitude: 57.4973445)
@@ -35,7 +32,6 @@ Station.create(name: "Vacoas Central", latitude: -20.2950453, longitude: 57.4933
 Station.create(name: "Sadally Station", latitude: -20.3018021, longitude: 57.4958665)
 Station.create(name: "Floreal Station", latitude: -20.3073556, longitude: 57.5072335)
 Station.create(name: "Curepipe Central", latitude: -20.3163468, longitude: 57.5254854)
-
 puts "Cleaning Database"
 Itinerary.destroy_all
 puts "Database Clean"
@@ -51,7 +47,6 @@ Itinerary.create(origin: "Port Louis Victoria Central", destination: "Quatre Bor
 Itinerary.create(origin: "Port Louis Victoria Central", destination: "St Jean Station", price: 47, duration: 36)
 Itinerary.create(origin: "Port Louis Victoria Central", destination: "Trianon Station", price: 47, duration: 64)
 Itinerary.create(origin: "Port Louis Victoria Central", destination: "Phoenix Station", price: 47, duration: 70)
-
 Itinerary.create(origin: "St Louis Station", destination: "Port Louis Victoria Central", price: 32, duration: 3)
 Itinerary.create(origin: "St Louis Station", destination: "Coromandel Station", price: 32, duration: 2)
 Itinerary.create(origin: "St Louis Station", destination: "Barkly Station", price: 38, duration: 7)
@@ -63,7 +58,6 @@ Itinerary.create(origin: "St Louis Station", destination: "Quatre Bornes Central
 Itinerary.create(origin: "St Louis Station", destination: "St Jean Station", price: 43, duration: 33)
 Itinerary.create(origin: "St Louis Station", destination: "Trianon Station", price: 43, duration: 61)
 Itinerary.create(origin: "St Louis Station", destination: "Phoenix Station", price: 47, duration: 67)
-
 Itinerary.create(origin: "Coromandel Station", destination: "Port Louis Victoria Central", price: 32, duration: 5)
 Itinerary.create(origin: "Coromandel Station", destination: "St Louis Station", price: 32, duration: 2)
 Itinerary.create(origin: "Coromandel Station", destination: "Barkly Station", price: 38, duration: 5)
@@ -75,7 +69,6 @@ Itinerary.create(origin: "Coromandel Station", destination: "Quatre Bornes Centr
 Itinerary.create(origin: "Coromandel Station", destination: "St Jean Station", price: 43, duration: 31)
 Itinerary.create(origin: "Coromandel Station", destination: "Trianon Station", price: 43, duration: 59)
 Itinerary.create(origin: "Coromandel Station", destination: "Phoenix Station", price: 43, duration: 65)
-
 Itinerary.create(origin: "Barkly Station", destination: "Port Louis Victoria Central", price: 38, duration: 10)
 Itinerary.create(origin: "Barkly Station", destination: "St Louis Station", price: 38, duration: 7)
 Itinerary.create(origin: "Barkly Station", destination: "Coromandel Station", price: 38, duration: 5)
