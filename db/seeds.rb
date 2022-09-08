@@ -76,9 +76,9 @@ Itinerary.create(origin: "Coromandel Station", destination: "St Jean Station", p
 Itinerary.create(origin: "Coromandel Station", destination: "Trianon Station", price: 43, duration: 59)
 Itinerary.create(origin: "Coromandel Station", destination: "Phoenix Station", price: 43, duration: 65)
 
-Itinerary.create(origin: "Barkly Station", destination: "Port Louis Victoria Central", price: 32, duration: 5)
-Itinerary.create(origin: "Barkly Station", destination: "St Louis Station", price: 32, duration: 2)
-Itinerary.create(origin: "Barkly Station", destination: "Barkly Station", price: 38, duration: 5)
+Itinerary.create(origin: "Barkly Station", destination: "Port Louis Victoria Central", price: 38, duration: 10)
+Itinerary.create(origin: "Barkly Station", destination: "St Louis Station", price: 38, duration: 7)
+Itinerary.create(origin: "Barkly Station", destination: "Coromandel Station", price: 38, duration: 5)
 Itinerary.create(origin: "Barkly Station", destination: "Beau Bassin Station", price: 38, duration: 10)
 Itinerary.create(origin: "Barkly Station", destination: "Vandermeersch Station", price: 38, duration: 16)
 Itinerary.create(origin: "Barkly Station", destination: "Rose-Hill Central", price: 38, duration: 19)
