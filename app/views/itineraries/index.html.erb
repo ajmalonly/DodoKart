@@ -1,5 +1,6 @@
 <% @itineraries.each do |itinerary|  %>
-<%= itinerary.origin  %>
+  <%= itinerary.origin  %>
+  <%= itinerary.destination %>
 <% end %>
 <div style="width: 100%; height: 600px;"
   data-controller="map"
