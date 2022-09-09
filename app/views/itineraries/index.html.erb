@@ -1,39 +1,22 @@
-<% @itineraries.each do |itinerary|  %>
-<%= itinerary.origin  %>
+
+<%# <% @itineraries.each do |itinerary|  %>
+  <%# <%= itinerary.origin  %>
+  <%# <%= itinerary.destination %>
+<%# <% end %>
+<%= form_with url: itinaries_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :origin,
+    params[:origin],
+    class: "form-control",
+    placeholder: "Put your Origin"
+  %>
+  <%= text_field_tag :destination,
+    params[:destination],
+    class: "form-control",
+    placeholder: "Put your Destination"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
- <%# <%= render "form", itinerary: @itinerary %>
-
-<div class="dropdown">
-
-  <%# <% @itineraries.each do |itinerary| %>
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-      <option selected> Select your location</option>
-      <option value="1">Port Louis Victoria Central</option>
-      <option value="2">Beau Bassin Station</option>
-      <option value="3">Quatre Bornes Central</option>
-    </select>
-
-    <br>
-
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-      <option selected> Select your destination</option>
-      <option value="1">Port Louis Victoria Central</option>
-      <option value="2">Beau Bassin Station</option>
-      <option value="3">Quatre Bornes Central</option>
-    </select>
-    <%# <% end %>
-
-    <br>
-
-    <button type="button" class="btn btn-primary">Create itinerary</button>
-
-     <%# </div>
-  <br>
-  <%= link_to "Create itinerary", new_itinerary_path(@itinerary), class: "btn btn-flat" %>
-      <%# </div> %>
-  <%# <div> %>
-</div>
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
