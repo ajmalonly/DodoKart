@@ -9,7 +9,9 @@ puts "Cleaning Database"
 Ticket.destroy_all
 Station.destroy_all
 User.destroy_all
+Itinerary.destroy_all
 puts "Database Clean"
+
 puts "Creating seeds"
 
 user_one = User.create(email: "test1@gmail.com", password: "1234567")
@@ -35,9 +37,6 @@ Station.create(name: "Sadally Station", latitude: -20.3018021, longitude: 57.495
 Station.create(name: "Floreal Station", latitude: -20.3073556, longitude: 57.5072335)
 Station.create(name: "Curepipe Central", latitude: -20.3163468, longitude: 57.5254854)
 
-puts "Cleaning Database"
-Itinerary.destroy_all
-puts "Database Clean"
 
 
 Itinerary.create(origin: "Port Louis Victoria Central", destination: "St Louis Station", price: 47, duration: 2)
