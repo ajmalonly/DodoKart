@@ -17,6 +17,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @ticket.itinerary = @itinerary
     @ticket.user = current_user
+    @ticket.price = @itinerary.price
+
     if @ticket.save
       redirect_to tickets_path
     else

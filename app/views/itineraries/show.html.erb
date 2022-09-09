@@ -1,17 +1,38 @@
+
+<div class="dropdown">
 <div class="card mb-3" style="max-width: 1500px;">
   <div class="row g-0">
     <div class="col-md-4">
-
+    <br>
 <div class="col-md-8">
-  <div class="card-body">
-    <h1><%= @itinerary.origin %></h1>
-    <h1><%= @itinerary.destination %></h1>
+  <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+   <li class="list-group-item"> <h1>📍 <%= @itinerary.origin %></h1></li>
+</div>
+
+    <h2> to<h2>
+    <div class="col-md-8">
+  <div class="card" style="width: 18rem;">
+   <ul class="list-group list-group-flush">
+   <li class="list-group-item"> <h1>🚈 <%= @itinerary.destination %></h1></li>
+</div>
+
   <div>
 </div>
+<br>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h2>Duration:<%= @itinerary.duration %>min</h2>
-    <h2>Price: Rs.<%= @itinerary.price %></h2>
-    <a href="#" class="btn btn-primary">Confirm</a>
+    <h2> <strong>Duration: </strong><%= @itinerary.duration %>min</h2>
+    <h2><strong>Price: </strong>  <%= @itinerary.price %> Rs</h2>
   </div>
+
+  <%# <%= render "form", itinerary: @itinerary %>
+
+  <%= simple_form_for [@itinerary, @ticket] do |f| %>
+    <%= f.input :start_time, html5: true %>
+
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
 </div>

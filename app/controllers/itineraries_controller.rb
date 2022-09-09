@@ -18,6 +18,7 @@ class ItinerariesController < ApplicationController
   end
 
   def show
+    @ticket = Ticket.new
   end
 
   private

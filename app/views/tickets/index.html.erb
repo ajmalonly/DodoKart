@@ -1,0 +1,23 @@
+<h1> Tickets </h1>
+
+<%@tickets.each do |ticket| %>
+
+<div class="col-md-8">
+  <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+  <br>
+   <li class="list-group-item"> <h1>📍<%= ticket.itinerary.origin %></h1></li>
+</div>
+
+    <h2> to<h2>
+    <div class="col-md-8">
+  <div class="card" style="width: 18rem;">
+   <ul class="list-group list-group-flush">
+   <li class="list-group-item"> <h1>🚈 <%= ticket.itinerary.destination%></h1></li>
+</div>
+<br>
+
+  <h3> <strong>Price: </strong><%= ticket.price %></h3>
+  <h3> <strong>Duration:</strong> <%= ticket.start_time %></h3>
+
+<% end %>
