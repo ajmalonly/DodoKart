@@ -17,6 +17,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @ticket.itinerary = @itinerary
     @ticket.user = current_user
+    @ticket.price = @itinerary.price
+
     if @ticket.save
       redirect_to tickets_path
     else
@@ -48,6 +50,6 @@ class TicketsController < ApplicationController
   end
 
   def set_itinerary
-    @itinerary = Itinerary.find(params[:game_id])
+    @itinerary = Itinerary.find(params[:itinerary_id])
   end
 end
