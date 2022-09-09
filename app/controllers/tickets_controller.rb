@@ -48,6 +48,6 @@ class TicketsController < ApplicationController
   end
 
   def set_itinerary
-    @itinerary = Itinerary.find(params[:game_id])
+    @itinerary = Itinerary.find(params[:itinerary_id])
   end
 end
