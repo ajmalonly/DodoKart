@@ -1,4 +1,5 @@
 class ItinerariesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_itinerary, only: [:show, :edit, :create, :update]
 
   def index

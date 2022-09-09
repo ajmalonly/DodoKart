@@ -1,1 +1,17 @@
-<%= @itinerary.origin   %>
+<div class="card mb-3" style="max-width: 1500px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+
+<div class="col-md-8">
+  <div class="card-body">
+    <h1><%= @itinerary.origin   %></h1>
+    <h1><%= @itinerary.destination %></h1>
+  <div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h2>Duration:<%= @itinerary.duration %>min</h2>
+    <h2>Price: Rs.<%= @itinerary.price %></h2>
+    <a href="#" class="btn btn-primary">Confirm</a>
+  </div>
+</div>
