@@ -14,5 +14,7 @@ class PagesController < ApplicationController
     else
       @itineraries = Itinerary.all
     end
+
+
   end
 end
