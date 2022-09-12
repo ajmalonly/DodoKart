@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 // Connects to data-controller="map"
 export default class extends Controller {
@@ -15,8 +16,12 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl }))
 
     this.map.on('load', () => {
       this.map.addSource('route', {
@@ -62,7 +67,7 @@ export default class extends Controller {
           'line-cap': 'round'
         },
         'paint': {
-          'line-color': '#888',
+          'line-color': '#094bb5',
           'line-width': 8
         }
       })
@@ -71,8 +76,16 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "25px"
+      customMarker.style.height = "25px"
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(this.map)
     })
   }
