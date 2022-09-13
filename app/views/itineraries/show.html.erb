@@ -1,4 +1,4 @@
-<div style="width: 100%; height: 600px;"
+<div style="width: 100%; height: 400px;"
   data-controller="track"
   data-track-markers-value="<%= @markers.to_json %>"
   data-track-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
@@ -8,17 +8,17 @@
   <div class="card" >
     <div class="card">
       <ul class="list-group list-group-flush">
-      <li class="list-group-item"> <h1>📍 <%= @itinerary.origin %></h1></li>
+      <li class="list-group-item"> <h3>📍 <%= @itinerary.origin %></h3></li>
     </div>
 
 <div>
-  <h2>to<h2>
+  <h4>to<h4>
 </div>
 
 
     <div class="card">
     <ul class="list-group list-group-flush">
-    <li class="list-group-item"> <h1>🚈 <%= @itinerary.destination %></h1></li>
+    <li class="list-group-item"> <h3>🚈 <%= @itinerary.destination %></h3></li>
 </div>
 
   <div>
@@ -26,16 +26,13 @@
 <br>
 <div class="card">
   <div class="card-body">
-    <h2> <strong>Duration: </strong><%= @itinerary.duration %>min</h2>
-    <h2><strong>Price: </strong>  <%= @itinerary.price %> Rs</h2>
+    <h3> <strong>Duration: </strong><%= @itinerary.duration %>min</h3>
+    <h3><strong>Price: </strong>  <%= @itinerary.price %> Rs</h3>
   </div>
-
-  <%# <%= render "form", itinerary: @itinerary %>
 
   <%= simple_form_for [@itinerary, @ticket] do |f| %>
     <%= f.input :start_time, html5: true %>
-
-    <%= f.button :submit, value: "Get a ticket" %>
+    <%= f.button :submit, value: "Get a ticket", class:"btn btn-primary" %>
   <% end %>
 </div>
 
