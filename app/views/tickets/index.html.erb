@@ -2,22 +2,21 @@
 
 <%@tickets.each do |ticket| %>
 
-<div class="col-md-8">
-  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush">
-  <br>
-   <li class="list-group-item"> <h1>📍<%= ticket.itinerary.origin %></h1></li>
-</div>
+<div class="col">
+		<div class="card radius-10 border-start border-0 border-3 border-success">
+		   <div class="card-body">
+			   <div class="d-flex align-items-center">
+				   <div>
+					   <p class="mb-0 text-secondary"><h1>📍<%= ticket.itinerary.origin %></h1></p>
+             <p class="mb-0 text-secondary"> <h1>🚈 <%= ticket.itinerary.destination%></h1></p>
+					   <h4 class="my-1 text-warning"><h3> <strong>Price: </strong><%= ticket.price %></h3></h4>
+					   <p class="mb-0 font-13"><h3> <strong>Duration:</strong> <%= ticket.itinerary.duration %> min</h3></p>
+          </div>
+			   </div>
+		   </div>
+		</div>
+	  </div>
+    <br>
 
-    <h2> to<h2>
-    <div class="col-md-8">
-  <div class="card" style="width: 18rem;">
-   <ul class="list-group list-group-flush">
-   <li class="list-group-item"> <h1>🚈 <%= ticket.itinerary.destination%></h1></li>
-</div>
-<br>
-
-  <h3> <strong>Price: </strong><%= ticket.price %></h3>
-  <h3> <strong>Duration:</strong> <%= ticket.start_time %></h3>
 
 <% end %>

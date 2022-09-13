@@ -1,9 +1,10 @@
-<%# <%= simple_form_for @itinerary do |f| %>
-  <%# <%= f.input :origin %>
+ <%= simple_form_for @itinerary do |f| %>
+   <%= f.input :origin, collection: @itineraries %>
+   <%= f.input :destination, collection: @itineraries %>
   <%# <%= f.association :itinerary.all.origin %>
   <%# <%= f.association :roles %>
-  <%# <%= f.button :submit %>
-<%# <% end %>
+   <%= f.button :submit %>
+ <% end %>
 
 
 <%= simple_form_for @itinerary do |f| %>
