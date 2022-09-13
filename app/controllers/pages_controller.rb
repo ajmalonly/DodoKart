@@ -4,7 +4,14 @@ class PagesController < ApplicationController
   def home
   end
 
+  def info
+  end
+
+  def profile
+  end
+
   def itineraries
+
     @stations = Station.all
     @station_options = @stations.map{ |s| [ s.name ] }
     if params[:origin].present? && params[:destination].present?
@@ -14,6 +21,7 @@ class PagesController < ApplicationController
         render "itineraries/index", status: :unprocessable_entity
       else
        @itineraries = Itinerary.where("origin ILIKE ? AND destination ILIKE ?", "%#{params[:origin]}%", "%#{params[:destination]}%")
+
     end
 
   #   elsif params[:orgin].present?

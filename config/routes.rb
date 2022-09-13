@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   end
   resources :tickets, only: [:index]
   get "itinaries", to: "pages#itineraries", as: :itinaries
-
+  get "info", to: "pages#info", as: :info
+  get "profile", to: "pages#profile", as: :profile
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

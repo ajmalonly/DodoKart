@@ -5,27 +5,26 @@
   data-track-coordinates-value="<%= @coordinates %>"></div>
 
 <div class="dropdown">
-<div class="card mb-3" style="max-width: 1500px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-    <br>
-<div class="col-md-8">
-  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush">
-   <li class="list-group-item"> <h1>📍 <%= @itinerary.origin %></h1></li>
+  <div class="card" >
+    <div class="card">
+      <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <h1>📍 <%= @itinerary.origin %></h1></li>
+    </div>
+
+<div>
+  <h2>to<h2>
 </div>
 
-    <h2> to<h2>
-    <div class="col-md-8">
-  <div class="card" style="width: 18rem;">
-   <ul class="list-group list-group-flush">
-   <li class="list-group-item"> <h1>🚈 <%= @itinerary.destination %></h1></li>
+
+    <div class="card">
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <h1>🚈 <%= @itinerary.destination %></h1></li>
 </div>
 
   <div>
 </div>
 <br>
-<div class="card" style="width: 18rem;">
+<div class="card">
   <div class="card-body">
     <h2> <strong>Duration: </strong><%= @itinerary.duration %>min</h2>
     <h2><strong>Price: </strong>  <%= @itinerary.price %> Rs</h2>
@@ -36,7 +35,7 @@
   <%= simple_form_for [@itinerary, @ticket] do |f| %>
     <%= f.input :start_time, html5: true %>
 
-    <%= f.button :submit %>
+    <%= f.button :submit, value: "Get a ticket" %>
   <% end %>
 </div>
 
