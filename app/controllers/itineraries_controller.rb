@@ -3,32 +3,22 @@ class ItinerariesController < ApplicationController
   before_action :set_itinerary, only: [:show]
 
   def index
-    @i = Itinerary.new
     @stations = Station.all
     @station_options = @stations.map{ |s| [ s.name ] }
     @markers = set_markers(@stations)
     @coordinates = get_coordinates(@stations)
-    if params[:origin].present? && params[:destination].present?
-      if params[:origin] == params[:destination]
-        @i.errors.add :origin, "Can't be the same as destination"
-        render "itineraries/index", status: :unprocessable_entity
-      else
-        @itineraries = Itinerary.where("origin ILIKE ? AND destination ILIKE ?", "%#{params[:origin]}%", "%#{params[:destination]}%")
-        redirect_to itinerary_path(@itineraries.last.id)
-      end
+    if params[:query].present?
+      @itineraries = Itinerary.where(origin: params[:query])
+      # if params[:origin] == params[:destination]
+      #     errors.add :origin, "This person is evil"
+      #     redirect_to root_path
+      #   render :index, status: :unprocessable_entity
+      # end
+    else
+      @itineraries = Itinerary.all
     end
-    # if params[:query].present?
-    #   @itineraries = Itinerary.where(origin: params[:query])
-    #   # if params[:origin] == params[:destination]
-    #   #     errors.add :origin, "This person is evil"
-    #   #     redirect_to root_path
-    #   #   render :index, status: :unprocessable_entity
-    #   # end
-    # else
-    #   @itineraries = Itinerary.all
-    # end
 
-    # @i = Itinerary.new
+    @i = Itinerary.new
   end
 
 

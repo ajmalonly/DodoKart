@@ -15,6 +15,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 * {
+    margin: 5px;
     padding: 0;
     border: 0;
     box-sizing: border-box
@@ -37,9 +38,9 @@ h1 {
 .card {
     color: #989898;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    margin-bottom: 40px;
 
 }
 
@@ -51,6 +52,7 @@ h1 {
 
 }
 
+body{margin-top:20px;}
 .timeline {
     border-left: 3px solid #727cf5;
     border-bottom-right-radius: 4px;
