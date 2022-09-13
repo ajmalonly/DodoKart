@@ -2,11 +2,41 @@
   display: flex;
   justify-content: space-around;
   background: lightgrey;
-  height: 40px;
+  // height: 50px;
   align-items: center;
   margin-top: 20px;
+  margin-top: 15px;
 }
 
 .footer-icons {
-  color: rgb(46, 46, 46);
+  color: #6285ab;
+  margin-bottom: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: inherit;
 }
+
+p {
+  font-size:small;
+}
+
+.icon-image {
+  width: 50px;
+  height: 50px;
+}
+
+// .fa-house {
+//   padding-right: 15px;
+// }
+
+// .fa-globe {
+//   padding-right: 17px;
+// }
+
+// .fa-ticket {
+//   padding-left: 5px;
+// }
+
+// .fa-clock {
+//   padding-left: 12px;
+// }

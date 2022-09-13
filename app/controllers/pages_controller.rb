@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def info
   end
 
+  def profile
+  end
+
   def itineraries
     cond1 = params[:origin].present?
     cond2 = params[:destination].present?
@@ -20,5 +23,7 @@ class PagesController < ApplicationController
     else
       @itineraries = Itinerary.all
     end
+
+
   end
 end
