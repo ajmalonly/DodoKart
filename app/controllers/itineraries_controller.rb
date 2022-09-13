@@ -3,15 +3,24 @@ class ItinerariesController < ApplicationController
   before_action :set_itinerary, only: [:show]
 
   def index
+    @stations = Station.all
+    @station_options = @stations.map{ |s| [ s.name ] }
+    @markers = set_markers(@stations)
+    @coordinates = get_coordinates(@stations)
     if params[:query].present?
       @itineraries = Itinerary.where(origin: params[:query])
+      # if params[:origin] == params[:destination]
+      #     errors.add :origin, "This person is evil"
+      #     redirect_to root_path
+      #   render :index, status: :unprocessable_entity
+      # end
     else
       @itineraries = Itinerary.all
     end
-    @stations = Station.all
-    @markers = set_markers(@stations)
-    @coordinates = get_coordinates(@stations)
+
+    @i = Itinerary.new
   end
+
 
   def show
     @origin = Station.find_by(name: @itinerary.origin)
