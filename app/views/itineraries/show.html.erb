@@ -36,6 +36,7 @@
 
   <%= simple_form_for [@itinerary, @ticket] do |f| %>
     <%= f.input :start_time, html5: true %>
+    <%= f.input :ticket_number %>
     <%= f.button :submit, value: "Get a ticket", class:"btn btn-primary" %>
   <% end %>
 </div>

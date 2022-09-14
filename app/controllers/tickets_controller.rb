@@ -9,20 +9,17 @@ class TicketsController < ApplicationController
   def show
   end
 
-  def new
-    @ticket = Ticket.new
-  end
-
   def create
     @ticket = Ticket.new(ticket_params)
     @ticket.itinerary = @itinerary
     @ticket.user = current_user
-    @ticket.price = @itinerary.price
 
     if @ticket.save
+      @ticket.price = @itinerary.price * @ticket.ticket_number
+      @ticket.save
       redirect_to tickets_path
     else
-      render :new, status: :unprocessable_entity
+      render "itineraries/show", status: :unprocessable_entity
     end
   end
 
@@ -42,7 +39,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:start_time, :price, :qr_code)
+    params.require(:ticket).permit(:start_time, :price, :qr_code, :ticket_number)
   end
 
   def set_ticket
