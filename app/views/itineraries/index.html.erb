@@ -1,5 +1,5 @@
 <% @i %>
-    <%= form_with url: itineraries_path, method: :get, class: "d-flex" do |form| %>
+    <%= form_with url: itineraries_path, method: :get, class: "" do |form| %>
       <%= render 'shared/error_messages' %>
       <%= select_tag(:origin, options_for_select(@station_options, params[:origin]), class: "form-control") %>
       <%= select_tag(:destination, options_for_select(@station_options, params[:destination]), class: "form-control") %>

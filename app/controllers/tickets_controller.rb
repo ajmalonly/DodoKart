@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
   before_action :set_itinerary, only: [:new, :create]
 
   def index
-    @tickets = current_user.tickets
+    @tickets = current_user.tickets.reverse
   end
 
   def show
