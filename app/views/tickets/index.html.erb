@@ -2,7 +2,6 @@
 
 <%@tickets.each do |ticket| %>
 
-
 <div class="col">
 
   <div class="card radius-10 border-start border-0 border-3 border-success">
@@ -17,43 +16,41 @@
           <p class="mb-0 font-13"><h3> <strong>Duration:</strong> <%= ticket.itinerary.duration %> min</h3></p>
           <p class="mb-0 font-13"><h3> <strong>Date:</strong> <%= ticket.start_time.strftime('%m/%d/%Y')  %></h3></p>
           <p class="mb-0 font-13"><h3> <strong>Time:</strong> <%= ticket.start_time.strftime('🕒%H:%M')  %></h3></p>
-            <%= link_to "Buy a ticket", ticket_path(ticket.id), class:"btn btn-primary" %>
+            <%= link_to "Buy a ticket", ticket_path(ticket.id), class:"btn btn-primary" %
         </div>
-			</div>
 
-		</div>
-  </div>
-</div>
-    <br>
-
-🚶
-<!-- Button trigger modal -->
-
-<%# <% <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  QR Code
-</button> %>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">QR Code</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-      <%= image_tag "https://png2png.com/wp-content/uploads/2021/08/barcode-png1.png", style: "width: 350px; height: 350px;" %>
-      </div>
-      <div class="modal-footer">
-      <a href=https://png2png.com/wp-content/uploads/2021/08/barcode-png1.png download>
-        <button type="button" class="btn btn-primary">Download</button></a>
       </div>
     </div>
   </div>
-</div>
+      <br>
+
+<!-- Button trigger modal -->
+
+  <%# <% <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    QR Code
+  </button> %>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">QR Code</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+        <%= image_tag "https://png2png.com/wp-content/uploads/2021/08/barcode-png1.png", style: "width: 350px; height: 350px;" %>
+        </div>
+        <div class="modal-footer">
+        <a href=https://png2png.com/wp-content/uploads/2021/08/barcode-png1.png download>
+          <button type="button" class="btn btn-primary">Download</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <% end %>
