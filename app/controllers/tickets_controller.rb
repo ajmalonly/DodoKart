@@ -7,6 +7,7 @@ class TicketsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
