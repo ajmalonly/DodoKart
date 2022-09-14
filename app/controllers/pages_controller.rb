@@ -11,7 +11,6 @@ class PagesController < ApplicationController
   end
 
   def itineraries
-
     @stations = Station.all
     @station_options = @stations.map{ |s| [ s.name ] }
     if params[:origin].present? && params[:destination].present?
@@ -19,9 +18,9 @@ class PagesController < ApplicationController
         @i = Itinerary.new
         @i.errors.add :origin, "Can't be the same as destination"
         render "itineraries/index", status: :unprocessable_entity
-      else
-       @itineraries = Itinerary.where("origin ILIKE ? AND destination ILIKE ?", "%#{params[:origin]}%", "%#{params[:destination]}%")
 
+      else
+      @itineraries = Itinerary.where("origin ILIKE ? AND destination ILIKE ?", "%#{params[:origin]}%", "%#{params[:destination]}%")
     end
 
   #   elsif params[:orgin].present?
