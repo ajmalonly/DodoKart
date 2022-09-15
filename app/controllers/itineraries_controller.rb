@@ -42,6 +42,7 @@ class ItinerariesController < ApplicationController
     @filtered_stations = @stations[indexes[0]..indexes[1]]
     @coordinates = get_coordinates(@filtered_stations)
     @markers = set_markers(@filtered_stations)
+    @origin_coordinates = [@origin.longitude, @origin.latitude]
     @ticket = Ticket.new
   end
 
