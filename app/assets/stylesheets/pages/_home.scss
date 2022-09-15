@@ -6,13 +6,6 @@
 }
 
 
-.dropdown {
-  margin-left: 10px;
-  margin-top: 10px;
-  padding-bottom: 5px;
-}
-
-
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 * {
     padding: 0;
@@ -38,15 +31,11 @@ h1 {
     color: #989898;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-
 }
 
 @media screen and (max-width: 860px) {
     .card {
         display: block;
-
     }
 
 }
@@ -164,4 +153,10 @@ h1 {
 .rtl .timeline .event::after {
     left: 0;
     right: -55.8px;
+}
+
+.my_dimension {
+
+  min-height: 75vh;
+  margin-bottom: 80px;
 }

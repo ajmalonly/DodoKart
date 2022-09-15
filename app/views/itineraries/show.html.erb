@@ -4,41 +4,31 @@
   data-track-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   data-track-coordinates-value="<%= @coordinates %>"></div>
 
-<div class="dropdown">
-  <div class="card" >
-    <div class="card">
-      <ul class="list-group list-group-flush">
+<div class="container-personal">
+    <div class="card p-3 border border-secondary h-50px" >
+        <h5>🚈 <%= @itinerary.origin %></h5>
 
-      <li class="list-group-item"> <h1>🚈 <%= @itinerary.origin %></h1></li>
+        <br>
+        <h5> 📍 <%= @itinerary.destination %></h5></li>
+    <div>
+    <br>
+
+    <div style=" height: 50px;">
+      <div class="d-flex justify-content-between border border-secondary h-500px border border-end-0 border-start-0 p-1">
+          <h6><i class="fa-sharp fa-solid fa-money-bill-wave"></i></i> Rs <%= @itinerary.price %></h6>  <h6><i class="fa-regular fa-clock"></i> <%= @itinerary.duration %>min</h6>
+      </div>
+    </div>
+
+<br>
+    <div class="card" >
+      <%= simple_form_for [@itinerary, @ticket] do |f| %>
+        <%= f.input :start_time, html5: true %>
+    </div>
+    <br>
+        <%= f.button :submit, value: "Buy a ticket", class:"btn btn-orange", style:"width: 100%;" %>
+      <% end %>
 
     </div>
 
-<div>
-  <h4>to<h4>
-</div>
-
-
-    <div class="card">
-    <ul class="list-group list-group-flush">
-
-    <li class="list-group-item"> <h1> 📍 <%= @itinerary.destination %></h1></li>
-
-</div>
-
-  <div>
-</div>
-<br>
-<div class="card">
-  <div class="card-body">
-    <h3> <strong>Duration: </strong><%= @itinerary.duration %>min</h3>
-    <h3><strong>Price: </strong>  <%= @itinerary.price %> Rs</h3>
-  </div>
-
-  <%= simple_form_for [@itinerary, @ticket] do |f| %>
-    <%= f.input :start_time, html5: true %>
-    <%= f.input :ticket_number %>
-    <%= f.button :submit, value: "Get a ticket", class:"btn btn-primary" %>
-  <% end %>
-</div>
 
 </div>
