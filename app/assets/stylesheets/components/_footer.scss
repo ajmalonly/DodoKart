@@ -1,9 +1,9 @@
 .footer {
   display: flex;
   justify-content: space-around;
-  background: lightgrey;
+  background-color: #F9EDCC;
   align-items: center;
-  margin-top: 15px;
+  height: 80px;
 }
 
 .footer-icons {
@@ -11,6 +11,10 @@
   margin-bottom: auto;
   margin: auto;
   text-align: center;
+  a {
+    text-decoration: none;
+    color:  rgb(0, 0, 0);
+  }
 }
 
 p {
