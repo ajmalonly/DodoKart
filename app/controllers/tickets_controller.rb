@@ -17,7 +17,7 @@ class TicketsController < ApplicationController
     if @ticket.save
       @ticket.price = @itinerary.price * @ticket.ticket_number
       @ticket.save
-      redirect_to tickets_path
+      redirect_to ticket_path(@ticket)
     else
       render "itineraries/show", status: :unprocessable_entity
     end
