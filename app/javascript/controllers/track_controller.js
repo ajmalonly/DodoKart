@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions"
 
 // Connects to data-controller="map"

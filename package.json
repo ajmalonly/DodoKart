@@ -9,7 +9,6 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.0",
     "maki": "^2.1.0",
-    "mapbox-gl-directions": "^3.0.3",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
