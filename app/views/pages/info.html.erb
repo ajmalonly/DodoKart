@@ -1,4 +1,15 @@
-<h1> information </h1>
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <%# <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> %>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <h1> information </h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -7,19 +18,19 @@
                     <h6 class="card-title"> Metro Timeline</h6>
                     <div id="content">
                         <ul class="timeline">
-                            <li class="event" data-date="6:30am - 7:00pm">
+                            <li class="event" data-date="6:30am - 10:00pm">
                                 <h3>Port Louis Victoria Central</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  </p>
                             </li>
-                            <li class="event" data-date="7:30am - 8:00pm">
+                            <li class="event" data-date="10:30am - 9:00pm">
                                 <h3>Quatre Bornes Central </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </p>
                             </li>
-                            <li class="event" data-date="8:00am - 9:00pm">
+                            <li class="event" data-date="8:00am - 6:00pm">
                                 <h3>Trianon Station</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </p>
                             </li>
-                            <li class="event" data-date="8:30am - 10:30pm">
+                            <li class="event" data-date="8:30am - 11:00pm">
                                 <h3>Rose-Hill Central</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </p>
                             </li>
@@ -29,4 +40,19 @@
             </div>
         </div>
     </div>
+</div>
+
+    </div>
+    <div class="carousel-item ">
+      <img class="img-edit" alt="annonces" src= <%=asset_path("annonces.JPG") %>>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
