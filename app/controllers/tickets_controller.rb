@@ -13,10 +13,9 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @ticket.itinerary = @itinerary
     @ticket.user = current_user
+    @ticket.price = @itinerary.price * @ticket.ticket_number
 
     if @ticket.save
-      @ticket.price = @itinerary.price * @ticket.ticket_number
-      @ticket.save
       redirect_to ticket_path(@ticket)
     else
       render "itineraries/show", status: :unprocessable_entity
