@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :tickets, only: [:new, :create]
   end
 
-  resources :tickets, only: [:index, :show]
+  resources :tickets, only: [:index, :show] do
+    get "map", to: "tickets#map", as: :map
+  end
   get "itinaries", to: "pages#itineraries", as: :itinaries
 
   get "info", to: "pages#info", as: :info

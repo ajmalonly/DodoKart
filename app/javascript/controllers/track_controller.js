@@ -1,16 +1,24 @@
 import { Controller } from "@hotwired/stimulus"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions"
 
 // Connects to data-controller="map"
 export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array,
-    coordinates: Array
+    coordinates: Array,
+    origin: Array
   }
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
+
+    const directions = new MapboxDirections({
+      accessToken: mapboxgl.accessToken,
+      unit: "metric",
+      profile: "mapbox/walking",
+      controls: { instructions: false }
+      })
 
     this.map = new mapboxgl.Map({
       container: this.element,
@@ -20,12 +28,15 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.map.addControl(directions, "top-left");
+    this.#getCoords(directions)
     this.map.addControl(new mapboxgl.NavigationControl());
     this.map.addControl(new mapboxgl.GeolocateControl({
       positionOptions: {
       enableHighAccuracy: true
       },
       trackUserLocation: true,
+      showUserLocation: true,
       showUserHeading: true
       }));
 
@@ -80,6 +91,18 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
-  // add to map
+  #getCoords(directions) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords
+      if (this.map.loaded()) {
+        directions.setOrigin([longitude, latitude])
+        directions.setDestination(this.originValue)
+      }
+      else (this.map.on("load", () => {
+        directions.setOrigin([longitude, latitude])
+        directions.setDestination(this.originValue)
+      }))
+    })
+  }
 
 }
