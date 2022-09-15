@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :itineraries, only: [:index, :show, :edit, :create, :update] do
     resources :tickets, only: [:new, :create]
   end
-  resources :tickets, only: [:index]
+
+  resources :tickets, only: [:index, :show]
+  get "itinaries", to: "pages#itineraries", as: :itinaries
+
   get "info", to: "pages#info", as: :info
   get "profile", to: "pages#profile", as: :profile
 end
