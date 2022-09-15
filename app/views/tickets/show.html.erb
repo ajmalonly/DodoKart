@@ -16,7 +16,7 @@
     <strong>Total fare: </strong> <%= @ticket.price %>
     <strong>Duration:</strong> <%= @ticket.itinerary.duration %>
     <br>
-    <strong>Date:</strong> <%= @ticket.start_time.strftime('%m/%d/%Y')  %>
+    <strong>Date:</strong> <%= @ticket.start_time.strftime('%d/%m/%Y')  %>
     <br>
     <strong>Time:</strong> <%= @ticket.start_time.strftime('🕒%H:%M')  %>
   </div>
@@ -25,5 +25,6 @@
     <%= image_tag "https://pngimg.com/uploads/qr_code/qr_code_PNG25.png", style: "width: 100%" %>
   </div>
   <button type="button" class="btn btn-primary">Download</button></a>
-  <%= link_to "Open Map", class:"btn btn-primary" %>
+  <%= link_to "Open Map",  ticket_map_path(@ticket), class: "d-flex justify-content-center align-items-center
+" %>
 </div>

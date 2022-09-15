@@ -24,9 +24,10 @@
     <div class="card" >
       <%= simple_form_for [@itinerary, @ticket] do |f| %>
         <%= f.input :start_time, html5: true %>
+        <%= f.input :ticket_number %>
     </div>
     <br>
-        <%= f.button :submit, value: "Buy a ticket", class:"btn btn-orange", style:"width: 100%;" %>
+        <%= f.submit  "Buy a ticket", class:"btn btn-orange", style:"width: 100%;" %>
       <% end %>
 
     </div>

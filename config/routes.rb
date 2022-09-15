@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :tickets, only: [:index, :show] do
     get "map", to: "tickets#map", as: :map
   end
-  get "itinaries", to: "pages#itineraries", as: :itinaries
+  # get "itinaries", to: "pages#itineraries", as: :itinaries
 
   get "info", to: "pages#info", as: :info
   get "profile", to: "pages#profile", as: :profile
