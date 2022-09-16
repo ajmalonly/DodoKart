@@ -24,12 +24,9 @@
     <div>
       <%= simple_form_for [@itinerary, @ticket] do |f| %>
         <%= f.input :start_time, html5: true %>
-        <%= f.input :ticket_number %>
+        <%= f.input :ticket_number, label:"Number of Passengers", collection: (1..10).map %>
         <%= f.submit  "Buy a ticket", class:"btn btn-orange", style:"width: 100%;", 'data-turbo' => true %>
       <% end %>
 
     </div>
-
-
-
 </div>
