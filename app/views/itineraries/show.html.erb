@@ -21,7 +21,7 @@
     </div>
 
     <br>
-    <div class="card" >
+    <div>
       <%= simple_form_for [@itinerary, @ticket] do |f| %>
         <%= f.input :start_time, html5: true %>
         <%= f.input :ticket_number, label:"Number of Passengers", collection: (1..10).map %>
