@@ -12,8 +12,8 @@
           <p class="mb-0 text-secondary"><h1>📍<%= ticket.itinerary.origin %></h1></p>
           <h2> to<h2>
           <p class="mb-0 text-secondary"> <h1>🚈 <%= ticket.itinerary.destination%></h1></p>
-          <p class="mb-0 font-13"><h3> <strong>🚶</strong> <%= ticket.ticket_number  %></h3></p>
-          <h4 class="my-1 text-warning"><h3> <strong>Price: </strong><%= ticket.price %></h3></h4>
+          <p class="mb-0 font-13"><h3> <strong>Number of Passengers</strong> <%= ticket.ticket_number  %></h3></p>
+          <h4 class="my-1 text-warning"><h3> <strong>Price: Rs.</strong><%= ticket.price %></h3></h4>
           <p class="mb-0 font-13"><h3> <strong>Duration:</strong> <%= ticket.itinerary.duration %> min</h3></p>
           <p class="mb-0 font-13"><h3> <strong>Date:</strong> <%= ticket.start_time.strftime('%d/%m/%Y') %></h3></p>
           <p class="mb-0 font-13"><h3> <strong>Time:</strong> <%= ticket.start_time.strftime('🕒%H:%M') %></h3></p>

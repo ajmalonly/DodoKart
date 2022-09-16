@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages' %>
       <%= select_tag(:origin, options_for_select(@station_options, params[:origin]), class: "form-control mb-1") %>
       <%= select_tag(:destination, options_for_select(@station_options, params[:destination]), class: "form-control mb-1") %>
-      <%= submit_tag "Search", class: "btn btn-primary", style: "width: 100%" %>
+      <%= submit_tag "Search", class: "btn btn-orange", style: "width: 100%" %>
 <% end %>
 <div style="width: 100%; height: 550px;"
   data-controller="map"
