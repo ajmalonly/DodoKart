@@ -1,31 +1,36 @@
 <div class="container">
   <div class="flash flash-success alert alert-dismissible fade show" role="alert">
-    <span><strong>Yay!</strong> 🎉 you successfully signed in to our service.</span>
+    <span><strong>Congratulations!</strong> 🎉 <br>you successfully bought a ticket.</span>
     <a data-bs-dismiss="alert" aria-label="Close">
       <i class="fas fa-times"></i>
     </a>
   </div>
-  <div class="ticket">
-    <h2>Metro Express ltd <br> single use ticket</h2>
-  </div>
-  <div class="destination">
-    <strong>Origin:</strong> <%= @ticket.itinerary.origin %>
-    <br>
-    <strong>Destination:</strong> <%= @ticket.itinerary.destination%>
-    <p class="mb-0 font-13"><strong>No of Passengers: </strong> <%= @ticket.ticket_number  %></h3></p>
-    <strong>Total fare: </strong> <%= @ticket.price %>
-    <strong>Duration:</strong> <%= @ticket.itinerary.duration %>
-    <br>
-    <strong>Date:</strong> <%= @ticket.start_time.strftime('%d/%m/%Y')  %>
-    <br>
-    <strong>Time:</strong> <%= @ticket.start_time.strftime('🕒%H:%M')  %>
-  </div>
 
-  <div class="card">
-    <%= image_tag "https://pngimg.com/uploads/qr_code/qr_code_PNG25.png", style: "width: 100%" %>
+  <div class="ticket">
+    <div class="ticket__content">
+          <h2>Metro Express <br> ticket</h2>
+
+          <div class="destination">
+            <p><strong>Origin:</strong> <%= @ticket.itinerary.origin %></p>
+
+            <p><strong>Destination:</strong> <%= @ticket.itinerary.destination%></p>
+
+            <p><strong>No of Passengers: </strong> <%= @ticket.ticket_number  %></p>
+
+            <p><strong>Total fare: </strong> Rs <%= @ticket.price %></p>
+
+            <p><strong>Duration:</strong> <%= @ticket.itinerary.duration %>min</p>
+
+            <p><strong>Date:</strong> <%= @ticket.start_time.strftime('%d/%m/%Y')  %></p>
+
+            <p><strong>Time:</strong> <%= @ticket.start_time.strftime('🕒 %H:%M')  %></p>
+          </div>
+    </div>
   </div>
+  <br>
+  <%= image_tag "https://pngimg.com/uploads/qr_code/qr_code_PNG25.png", class:"img_qr" %>
+<div  class="d-flex justify-content-evenly">
   <a href=https://png2png.com/wp-content/uploads/2021/08/barcode-png1.png download>
-        <button type="button" class="btn btn-primary">Download</button></a>
-  <%= link_to "Open Map",  ticket_map_path(@ticket), class: "d-flex justify-content-center align-items-center
-" %>
+          <button type="button" class="btn btn-orange btn-radius ">Download</button></a>
+    <%= link_to "Open Map",  ticket_map_path(@ticket), class: " btn btn-success mb-2  btn-radius " %>
 </div>
